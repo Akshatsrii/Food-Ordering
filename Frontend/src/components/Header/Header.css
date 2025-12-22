@@ -1,0 +1,328 @@
+.header {
+  width: 90%;
+  height: 34vw;
+  margin: 30px auto;
+  border-radius: 20px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  overflow: hidden;
+  
+  /* Enhanced shadow with color tint */
+  box-shadow: 0 10px 50px rgba(255, 76, 36, 0.1), 
+              0 5px 20px rgba(0, 0, 0, 0.08);
+  
+  /* Smooth transitions */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Elegant lift effect on hover */
+.header:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(255, 76, 36, 0.15), 
+              0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Much lighter overlay - barely visible */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.12) 35%,
+    rgba(0, 0, 0, 0.05) 60%,
+    transparent 100%
+  );
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Brightness boost on hover */
+.header:hover::before {
+  opacity: 0.5;
+}
+
+/* Subtle glow effect instead of vignette */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.header-contents {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  max-width: 50%;
+  left: 6vw;
+  bottom: 20%;
+
+  color: #ffffff;
+  
+  /* Smooth entrance with spring effect */
+  animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Enhanced fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* MAIN HEADING */
+.header-contents h2 {
+  font-size: max(3.2vw, 32px);
+  font-weight: 700;
+  line-height: 1.15;
+  
+  /* Enhanced text effects */
+  text-shadow: 
+    2px 4px 12px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 76, 36, 0.1);
+  
+  /* Gradient text option (uncomment to use) */
+  /* background: linear-gradient(135deg, #ffffff 0%, #fff5f3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; */
+  
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.header-contents h2:hover {
+  transform: translateX(8px);
+  text-shadow: 
+    3px 6px 16px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 76, 36, 0.2);
+}
+
+/* DESCRIPTION */
+.header-contents p {
+  font-size: max(1vw, 14px);
+  line-height: 1.7;
+  opacity: 0.98;
+  
+  /* Enhanced readability with lighter shadow */
+  text-shadow: 
+    1px 2px 8px rgba(0, 0, 0, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+
+/* BUTTON - Enhanced with modern gradient */
+.header-contents button {
+  width: fit-content;
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: none;
+
+  /* Gradient background */
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #323232;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  /* Enhanced transitions with spring effect */
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Beautiful shadow */
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  
+  /* Prevent text selection */
+  user-select: none;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button shine effect */
+.header-contents button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.header-contents button:hover::before {
+  left: 100%;
+}
+
+.header-contents button:hover {
+  /* Vibrant gradient on hover */
+  background: linear-gradient(135deg, #ff4c24 0%, #ff6b47 100%);
+  color: #ffffff;
+  
+  /* Enhanced hover effects */
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 
+    0 12px 30px rgba(255, 76, 36, 0.4),
+    0 6px 15px rgba(255, 76, 36, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  
+  letter-spacing: 1px;
+}
+
+.header-contents button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 
+    0 6px 15px rgba(255, 76, 36, 0.35),
+    0 3px 8px rgba(255, 76, 36, 0.25);
+}
+
+/* Backdrop blur for better text readability */
+.header-contents::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    ellipse at left,
+    rgba(0, 0, 0, 0.15) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE ENHANCEMENTS */
+@media (max-width: 1024px) {
+  .header {
+    height: 40vw;
+  }
+  
+  .header-contents {
+    max-width: 60%;
+    bottom: 18%;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 50vw;
+    margin: 20px auto;
+    border-radius: 15px;
+  }
+  
+  .header::before {
+    background: linear-gradient(
+      110deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      transparent 100%
+    );
+  }
+  
+  .header-contents {
+    max-width: 75%;
+    left: 5vw;
+    bottom: 15%;
+    gap: 16px;
+  }
+  
+  .header-contents h2 {
+    font-size: max(4vw, 28px);
+  }
+  
+  .header-contents p {
+    font-size: max(1.3vw, 13px);
+  }
+  
+  .header-contents button {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 60vw;
+    width: 95%;
+    border-radius: 12px;
+  }
+  
+  .header::before {
+    background: linear-gradient(
+      110deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.18) 50%,
+      transparent 100%
+    );
+  }
+  
+  .header-contents {
+    max-width: 85%;
+    left: 4vw;
+    bottom: 12%;
+    gap: 14px;
+  }
+  
+  .header-contents h2 {
+    font-size: 26px;
+  }
+  
+  .header-contents p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  
+  .header-contents button {
+    padding: 11px 24px;
+    font-size: 13px;
+  }
+}
+
+/* Optional: Animated background effect */
+@keyframes backgroundShift {
+  0%, 100% {
+    background-position: center center;
+  }
+  50% {
+    background-position: center calc(50% + 10px);
+  }
+}
+
+.header {
+  animation: backgroundShift 20s ease-in-out infinite;
+}

@@ -1,0 +1,138 @@
+.my-orders {
+  padding: 40px 8%;
+  min-height: 70vh;
+}
+
+.my-orders h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Loading & Empty State */
+.loading,
+.no-orders {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* Orders Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Single Order Card */
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 60px 1.5fr 0.6fr 0.7fr 0.6fr;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Parcel Icon */
+.my-orders-order img {
+  width: 45px;
+}
+
+/* Order Items */
+.order-items {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Amount */
+.order-amount {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Status */
+.order-status {
+  font-size: 14px;
+}
+
+.paid {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.pending {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Date */
+.order-date {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .my-orders-order {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .my-orders-order img {
+    margin-bottom: 10px;
+  }
+}
+/* Tracking Text */
+.tracking-text {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Buttons Container */
+.track-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Track Order Button */
+.track-btn {
+  padding: 6px 12px;
+  background-color: #1765a4;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.track-btn:hover {
+  background-color: #0f4c7f;
+}
+
+/* Refresh Button */
+.refresh-btn {
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background-color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .track-btns {
+    justify-content: flex-start;
+  }
+}

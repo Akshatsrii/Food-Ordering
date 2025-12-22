@@ -1,0 +1,209 @@
+/* Previous CSS remains the same, add these new styles */
+
+.food-item-img-container {
+  position: relative;
+  width: 100%;
+}
+
+.food-item-img-container .add {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.food-item-img-container .add:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.food-item-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.food-item-counter img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.food-item-counter img:hover {
+  transform: scale(1.15);
+}
+
+.food-item-counter p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Rating Stars Styles */
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.full-star {
+  color: #ffc107;
+  text-shadow: 0 1px 3px rgba(255, 193, 7, 0.4);
+}
+
+.half-star {
+  background: linear-gradient(90deg, #ffc107 50%, #e0e0e0 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.empty-star {
+  color: #e0e0e0;
+}
+
+.rating-number {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin-left: 6px;
+}
+
+.food-item:hover .star {
+  transform: scale(1.1);
+}
+
+/* Rest of your previous CSS for food-item */
+.food-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 
+              0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.food-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 76, 36, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.food-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 76, 36, 0.15), 
+              0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.food-item:hover::before {
+  opacity: 1;
+}
+
+.food-item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: brightness(0.95);
+  display: block;
+}
+
+.food-item:hover .food-item-image {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.food-item-info {
+  padding: 20px 22px 18px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), #ffffff);
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.food-item-name-rating p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.food-item:hover .food-item-name-rating p {
+  color: #ff4c24;
+}
+
+.food-item-description {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.food-item-price {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff4c24 0%, #ff6b47 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+  letter-spacing: -0.5px;
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+body {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
+  margin: 16px 0;      /* top-bottom space */
+}
+.app-content {
+  display: flex;
+  flex-direction: row;   /* ✅ sidebar left, page right */
+  min-height: 100vh;
+}
+
